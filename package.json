@@ -1,0 +1,28 @@
+{
+  "name": "cypresstutorial",
+  "version": "1.0.0",
+  "description": "Cypress Testing project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fabianlevin88/cypressTutorial.git"
+  },
+  "keywords": [
+    "cypress",
+    "testing",
+    "automation"
+  ],
+  "author": "Fabian Andres Levin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fabianlevin88/cypressTutorial/issues"
+  },
+  "homepage": "https://github.com/fabianlevin88/cypressTutorial#readme",
+  "dependencies": {
+    "cypress": "^9.3.1",
+    "prettier": "^2.5.1"
+  }
+}
