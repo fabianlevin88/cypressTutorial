@@ -9,4 +9,8 @@ describe('Buttons and links examples', () => {
 
         cy.get('h1').contains('Travel').should('be.visible')
     });
+
+    it('Should display the correct number of books', () => {
+        cy.get('.product_pod').its('length').should('eq', 11)
+    });
 });
