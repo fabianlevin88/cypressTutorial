@@ -29,3 +29,14 @@ describe('Browser Actions', () => {
         cy.xpath('//h1').should('be.visible')
     })
 })
+
+describe('Implicit waits, pause and debug', () => {
+    it('Should wait for 3 seconds', () => {
+        cy.visit('http://example.com', { timeout: 10000 })
+        cy.wait(3000)
+    })
+
+    it('Should pause the execution', () => {
+        cy.pause()
+    })
+})
