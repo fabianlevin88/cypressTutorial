@@ -10,3 +10,9 @@ describe('Failling test example', () => {
         expect(true).to.equal(false)
     })
 })
+
+describe('Browser Actions', () => {
+    it('should load correct URL', () => {
+        cy.visit('http://example.com', { timeout: 10000 })
+    })
+})
