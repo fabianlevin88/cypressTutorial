@@ -6,7 +6,6 @@ describe('Buttons and links examples', () => {
 
     it('Should click on the travel category', () => {
         cy.get('a').contains('Travel').click()
-
         cy.get('h1').contains('Travel').should('be.visible')
     });
 
