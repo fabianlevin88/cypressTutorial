@@ -4,15 +4,19 @@ describe('Working with inputs', () => {
     });
 
     it('Enter the username', () => {
-        cy.get('input#user_login').clear()
+        cy.get('input[id=user_login]').clear()
         cy.log('username input cleared!')
-        cy.get('input#user_login').type('admin@user.com', { delay: 50 })
+        cy.get('input[id=user_login]').type('admin@user.com', { delay: 50 })
     });
 
     it('Enter the password', () => {
-        cy.get('input#user_password').clear()
+        cy.get('input[id=user_password]').clear()
         cy.log('password input cleared!')
-        cy.get('input#user_password').type('lalala', { delay: 50 })
+        cy.get('input[id=user_password]').type('lalala', { delay: 50 })
+    });
+
+    it('Click on the checkbox', () => {
+        cy.get('input[type=checkbox]').click()
     });
 
     it('Submit the login form', () => {
@@ -20,6 +24,6 @@ describe('Working with inputs', () => {
     });
 
     it('Should display an error message', () => {
-        cy.get('div.alert.alert-error').should('be.visible')
+        cy.get('div[class*=alert-error]').should('be.visible')
     });
 });
