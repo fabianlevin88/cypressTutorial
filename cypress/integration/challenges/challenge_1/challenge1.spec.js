@@ -2,6 +2,8 @@ describe('Challenge One', () => {
     it('Should visit the books page', () => {
         cy.visit('http://books.toscrape.com/index.html', { timeout: 10000 })
         cy.url().should('include', 'index.html')
+        cy.log('Before reloading')
+        cy.reload()
         cy.log('Webpage successfully loaded!')
     });
 
