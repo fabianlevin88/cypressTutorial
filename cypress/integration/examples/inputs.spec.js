@@ -4,15 +4,17 @@ describe('Working with inputs', () => {
     });
 
     it('Enter the username', () => {
-        cy.get('input[id=user_login]').clear()
+        cy.get('input[id=user_login]').as('username')
+        cy.get('@username').clear()
         cy.log('username input cleared!')
-        cy.get('input[id=user_login]').type('admin@user.com', { delay: 50 })
+        cy.get('@username').type('admin@user.com', { delay: 50 })
     });
 
     it('Enter the password', () => {
-        cy.get('input[id=user_password]').clear()
+        cy.get('input[id=user_password]').as('password')
+        cy.get('@password').clear()
         cy.log('password input cleared!')
-        cy.get('input[id=user_password]').type('lalala', { delay: 50 })
+        cy.get('@password').type('lalala', { delay: 50 })
     });
 
     it('Click on the checkbox', () => {
