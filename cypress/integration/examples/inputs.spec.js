@@ -26,6 +26,8 @@ describe('Working with inputs', () => {
     });
 
     it('Should display an error message', () => {
-        cy.get('div[class*=alert-error]').should('be.visible')
+        cy.get('div[class*=alert-error]')
+          .should('be.visible')
+          .and('contain', 'Login and/or password are wrong.')
     });
 });
