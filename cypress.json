@@ -1,4 +1,15 @@
 {
-    "video": false,
+    "watchForFileChanges": false,
+    "viewPortWidth": 1000,
+    "viewPortHeight": 600,
+    "waitForAnimations": true,
+    "animationDistanceThreshold": 20,
+    "defaultCommandTimeout": 5000,
+    "execTimeout": 60000,
+    "pageLoadTimeout": 60000,
+    "requestTimeout": 15000,
+    "responseTimeout": 150000,
+    "failOnStatusCode": false,
+    "video": false, 
     "screenshotOnRunFailure": false
 }
