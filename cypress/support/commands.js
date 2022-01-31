@@ -23,3 +23,23 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
+
+Cypress.Commands.add('openPage', () => {
+    cy.clearCookies({ log: true })
+    cy.clearLocalStorage({ log: true })
+    cy.visit('http://zero.webappsecurity.com/login.html')
+})
+
+Cypress.Commands.add('enterUsername', (username) => {
+    cy.get('input[id=user_login]').as('username')
+    cy.get('@username').clear()
+    cy.log('username input cleared!')
+    cy.get('@username').type(username)
+})
+
+Cypress.Commands.add('enterPassword', (password) => {
+    cy.get('input[id=user_password]').as('password')
+    cy.get('@password').clear()
+    cy.log('password input cleared!')
+    cy.get('@password').type(password)
+})

@@ -6,29 +6,19 @@ describe('Working with inputs', () => {
     })
     
     it('Should open the test application', () => {
-        cy.visit('http://zero.webappsecurity.com/login.html')
-        cy.clearCookies({ log: true })
-        cy.clearLocalStorage('My Item', { log: true })
+        cy.openPage()
         cy.title().should('include', 'Zero - Log in')
     });
 
     it('Enter the username', () => {
-        cy.get('input[id=user_login]').as('username')
-        cy.get('@username').clear()
-        cy.log('username input cleared!')
         cy.fixture('user').then((user) => {
-            cy.get('@username').type(user.username, { delay: 50 })
-
+            cy.enterUsername(user.username)
         })
-        
     });
 
     it('Enter the password', () => {
-        cy.get('input[id=user_password]').as('password')
-        cy.get('@password').clear()
-        cy.log('password input cleared!')
         cy.fixture('user').then((user) => {
-            cy.get('@password').type(user.password, { delay: 50 })
+            cy.enterPassword(user.password)
         })
     });
 
