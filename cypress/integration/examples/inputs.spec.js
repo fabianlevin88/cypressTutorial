@@ -16,14 +16,20 @@ describe('Working with inputs', () => {
         cy.get('input[id=user_login]').as('username')
         cy.get('@username').clear()
         cy.log('username input cleared!')
-        cy.get('@username').type('admin@user.com', { delay: 50 })
+        cy.fixture('user').then((user) => {
+            cy.get('@username').type(user.username, { delay: 50 })
+
+        })
+        
     });
 
     it('Enter the password', () => {
         cy.get('input[id=user_password]').as('password')
         cy.get('@password').clear()
         cy.log('password input cleared!')
-        cy.get('@password').type('lalala', { delay: 50 })
+        cy.fixture('user').then((user) => {
+            cy.get('@password').type(user.password, { delay: 50 })
+        })
     });
 
     it('Click on the checkbox', () => {
