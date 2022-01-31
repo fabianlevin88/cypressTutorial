@@ -1,6 +1,15 @@
 describe('Working with inputs', () => {
+    it('Should override the current time', () => {
+      const date = new Date(2022, 31, 10).getTime() // return a timestamp
+      cy.clock(date)
+      cy.log(date)
+    })
+    
     it('Should open the test application', () => {
         cy.visit('http://zero.webappsecurity.com/login.html')
+        cy.clearCookies({ log: true })
+        cy.clearLocalStorage('My Item', { log: true })
+        cy.title().should('include', 'Zero - Log in')
     });
 
     it('Enter the username', () => {
