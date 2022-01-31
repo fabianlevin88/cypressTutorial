@@ -20,7 +20,7 @@ describe('Device Tests', () => {
     });
 
     it('Macbook 15', () => {
-        cy.viewport('macbook-15')
+        cy.viewport('macbook-15 ')
         cy.visit('http://wwww.example.com')
     });
 });
