@@ -6,7 +6,7 @@ describe('Working with inputs', () => {
     })
     
     it('Should open the test application', () => {
-        cy.openPage()
+        cy.openPage('http://zero.webappsecurity.com/login.html')
         cy.title().should('include', 'Zero - Log in')
     });
 
